@@ -1,22 +1,47 @@
 package com.github.mideo
 
+import scala.annotation.tailrec
+import scala.collection.mutable.Stack
+
 //https://adventofcode.com/2022/day/1
 object CalorieCounting {
 
+  def getTopNElvesMostCalories(caloriesList: String, topNumberOfElves: Int): List[Elf] = sort(stack(caloriesList)).take(topNumberOfElves).toList
+
+
   def getElfMostCalories(caloriesList: String): Option[Elf] = {
-    caloriesList.split("\n\n")
+    sort(stack(caloriesList)).headOption
+  }
+
+  private def stack(caloriesList: String): Stack[Elf] = {
+    Stack.from(caloriesList.split("\n\n")
       .filter(it => it.nonEmpty)
-      .zipWithIndex
-      .map(it => {
-        val sum  = it._1.split("\n").foldLeft(0L) {
-          case (total, "") => total
-          case (total, x) => total + x.toLong
-        }
-        Elf(it._2+1, sum)
-      }).maxOption((x: Elf, y: Elf) => x.totalCalories.compareTo(y.totalCalories))
+      .map(Elf.apply))
+  }
+
+  @tailrec
+  private def sort(stack: Stack[Elf], accumulator: Stack[Elf] = Stack.empty[Elf]): Stack[Elf] = {
+    @tailrec
+    def innerSort(stackElf: Elf, sorted: Stack[Elf], acc: Stack[Elf]): Stack[Elf] = {
+      if (sorted.isEmpty || stackElf.totalCalories >= sorted.head.totalCalories) Stack.from(sorted).prepend(stackElf).prependAll(acc)
+      else innerSort(stackElf, sorted.tail, Stack.from(acc).append(sorted.head))
+    }
+
+    if (stack.isEmpty) accumulator
+    else sort(stack.tail, innerSort(stack.head, accumulator, Stack.empty[Elf]))
 
   }
 
-  case class Elf(number: Int, totalCalories: Long)
+  case class Elf(totalCalories: Long)
 
+  object Elf {
+    def apply(stringOfNumbers: String): Elf = {
+
+      val sum = stringOfNumbers.split("\n").foldLeft(0L) {
+        case (total, "") => total
+        case (total, x) => total + x.toLong
+      }
+      Elf(sum)
+    }
+  }
 }
