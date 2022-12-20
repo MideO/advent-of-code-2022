@@ -1,10 +1,8 @@
 package com.github.mideo
 
-import com.github.mideo.CalorieCounting.Elf
-import org.scalatest.wordspec.AnyWordSpec
-import org.scalatest.matchers.should.Matchers
+import com.github.mideo.Elf
 
-class CalorieCountingSpec extends AnyWordSpec with Matchers {
+class CalorieCountingSpec extends TestSpec {
 
   "Elves carrying the most calories " should {
     "return total number of calories carry by the elf with most calories"  in {

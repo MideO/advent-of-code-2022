@@ -4,6 +4,19 @@ import scala.annotation.tailrec
 import scala.collection.mutable.Stack
 
 //https://adventofcode.com/2022/day/1
+case class Elf(totalCalories: Long)
+
+object Elf {
+  def apply(stringOfNumbers: String): Elf = {
+
+    val sum = stringOfNumbers.split("\n").foldLeft(0L) {
+      case (total, "") => total
+      case (total, x) => total + x.toLong
+    }
+    Elf(sum)
+  }
+}
+
 object CalorieCounting {
 
   def getTopNElvesMostCalories(caloriesList: String, topNumberOfElves: Int): List[Elf] = sort(stack(caloriesList)).take(topNumberOfElves).toList
@@ -30,18 +43,5 @@ object CalorieCounting {
     if (stack.isEmpty) accumulator
     else sort(stack.tail, innerSort(stack.head, accumulator, Stack.empty[Elf]))
 
-  }
-
-  case class Elf(totalCalories: Long)
-
-  object Elf {
-    def apply(stringOfNumbers: String): Elf = {
-
-      val sum = stringOfNumbers.split("\n").foldLeft(0L) {
-        case (total, "") => total
-        case (total, x) => total + x.toLong
-      }
-      Elf(sum)
-    }
   }
 }

@@ -14,6 +14,18 @@ object Main extends App {
   )
 
 
+  //Day 2
+  // Q1
+  print(
+    "RockPaperScissors.playWithStrategy PlayWithGameOptionStrategy",
+    RockPaperScissors.playWithStrategy(Inputs.RockPaperScissorsStrategy, PlayWithGameOptionStrategy)
+  )
+
+  // Q2
+  print(
+    "RockPaperScissors.playWithStrategy PlayWithOutcomeStrategy",
+    RockPaperScissors.playWithStrategy(Inputs.RockPaperScissorsStrategy, PlayWithOutcomeStrategy)
+  )
 
   private def print[T](result:T*):Unit = result.foreach(println)
 }
