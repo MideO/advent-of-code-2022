@@ -11,10 +11,11 @@ See: https://adventofcode.com/2022
 ```
 
 ### How to use
-Create an input in [Input.scala](./src/main/scala/Inputs.scala)
+Create an input in [CalorieCounting.scala](./src/main/scala/inputs/CalorieCountingInput.scala)
  
 ```
-val CalorieCountingInput = """
+object CalorieCountingInput {
+  val value ="""
           |1000
           |2000
           |3000
@@ -30,6 +31,7 @@ val CalorieCountingInput = """
           |
           |10000
           |""".stripMargin
+}
 ```
 
 Evaluate Result in [Main.scala](./src/main/scala/Main.scala)

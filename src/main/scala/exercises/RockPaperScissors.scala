@@ -1,7 +1,8 @@
 package com.github.mideo
+package exercises
 
-import GamePoint.{Draw, Loss, Win}
-import UserInput.{X, Y, Z}
+import exercises.GamePoint.{Draw, Loss, Win}
+import exercises.UserInput.{X, Y, Z}
 
 //https://adventofcode.com/2022/day/2
 private object GamePoint {

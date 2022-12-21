@@ -1,4 +1,5 @@
 package com.github.mideo
+package exercises
 
 import scala.annotation.tailrec
 import scala.collection.mutable.Stack

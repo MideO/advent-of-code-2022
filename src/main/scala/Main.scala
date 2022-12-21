@@ -1,16 +1,20 @@
 package com.github.mideo
 
+import inputs._
+
+import com.github.mideo.exercises.{CalorieCounting, CampCleanup, PlayWithGameOptionStrategy, PlayWithOutcomeStrategy, RockPaperScissors, RucksackReorganization}
+
 object Main extends App {
   // Day 1
   // Q1
   print (
     "CalorieCounting.getElfMostCalories:",
-    CalorieCounting.getElfMostCalories(Inputs.CalorieCountingInput)
+    CalorieCounting.getElfMostCalories(CalorieCountingInput.value)
   )
   // Q2
   print(
     "CalorieCounting.getTopNElvesMostCalories",
-    CalorieCounting.getTopNElvesMostCalories(Inputs.CalorieCountingInput, 3).map(_.totalCalories).sum
+    CalorieCounting.getTopNElvesMostCalories(CalorieCountingInput.value, 3).map(_.totalCalories).sum
   )
 
 
@@ -18,25 +22,40 @@ object Main extends App {
   // Q1
   print(
     "RockPaperScissors.playWithStrategy PlayWithGameOptionStrategy",
-    RockPaperScissors.playWithStrategy(Inputs.RockPaperScissorsStrategy, PlayWithGameOptionStrategy)
+    RockPaperScissors.playWithStrategy(RockPaperScissorInput.value, PlayWithGameOptionStrategy)
   )
 
   // Q2
   print(
     "RockPaperScissors.playWithStrategy PlayWithOutcomeStrategy",
-    RockPaperScissors.playWithStrategy(Inputs.RockPaperScissorsStrategy, PlayWithOutcomeStrategy)
+    RockPaperScissors.playWithStrategy(RockPaperScissorInput.value, PlayWithOutcomeStrategy)
   )
 
   // Day 3
   // Q1
   print(
     "RucksackReorganization.sumPriority",
-    RucksackReorganization.sumPriority(Inputs.RucksackReorganizationInput)
+    RucksackReorganization.sumPriority(RucksackReorganizationInput.value)
   )
   // Q2
   print(
     "RucksackReorganization.sumPriorityByElfGroup",
-    RucksackReorganization.sumPriorityByElfGroup(Inputs.RucksackReorganizationInput)
+    RucksackReorganization.sumPriorityByElfGroup(RucksackReorganizationInput.value)
   )
+
+
+  // Day4
+  // Q1
+  print(
+    "CampCleanup.countPairs pair.isFullyContained",
+    CampCleanup.countPairs(CampCleanupInput.value, pair => pair.isFullyContained)
+  )
+  // Q2
+  print(
+    "CampCleanup.countPairs pair.isOverlapping",
+    CampCleanup.countPairs(CampCleanupInput.value, pair => pair.isOverlapping)
+  )
+
+
   private def print[T](result:T*):Unit = result.foreach(println)
 }

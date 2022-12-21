@@ -6,5 +6,16 @@ lazy val root = (project in file("."))
   .settings(
     name := "advent-of-code-2022",
     idePackagePrefix := Some("com.github.mideo"),
-    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % "test"
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % "test",
+    scalacOptions ++= Seq(
+      "-unchecked",
+      "-feature",
+      "-language:existentials",
+      "-language:higherKinds",
+      "-language:implicitConversions",
+      "-language:postfixOps",
+      "-deprecation",
+      "-encoding",
+      "utf8"
+    )
   )

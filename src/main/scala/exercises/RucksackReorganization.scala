@@ -1,4 +1,5 @@
 package com.github.mideo
+package exercises
 
 
 case class RucksackCompartment(items: String)
