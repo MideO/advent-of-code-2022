@@ -4,7 +4,7 @@ package exercises
 import exercises.GamePoint.{Draw, Loss, Win}
 import exercises.UserInput.{X, Y, Z}
 
-//https://adventofcode.com/2022/day/2
+// https://adventofcode.com/2022/day/2
 private object GamePoint {
   val Win = 6
   val Draw = 3

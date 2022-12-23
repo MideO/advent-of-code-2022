@@ -4,7 +4,7 @@ package exercises
 import scala.annotation.tailrec
 import scala.collection.mutable.Stack
 
-//https://adventofcode.com/2022/day/1
+// https://adventofcode.com/2022/day/1
 case class Elf(totalCalories: Long)
 
 object Elf {

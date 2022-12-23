@@ -1,7 +1,7 @@
 package com.github.mideo
 package exercises
 
-
+// https://adventofcode.com/2022/day/3
 case class RucksackCompartment(items: String)
 
 case class RuckSack(compartments: RucksackCompartment*) {

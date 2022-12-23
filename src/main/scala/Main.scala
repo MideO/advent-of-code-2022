@@ -2,7 +2,7 @@ package com.github.mideo
 
 import inputs._
 
-import com.github.mideo.exercises.{CalorieCounting, CampCleanup, PlayWithGameOptionStrategy, PlayWithOutcomeStrategy, RockPaperScissors, RucksackReorganization}
+import com.github.mideo.exercises.{CalorieCounting, CampCleanup, MultiStackCrateMover, PlayWithGameOptionStrategy, PlayWithOutcomeStrategy, RockPaperScissors, RucksackReorganization, SingleStackCrateMover, SupplyStacks}
 
 object Main extends App {
   // Day 1
@@ -44,7 +44,7 @@ object Main extends App {
   )
 
 
-  // Day4
+  // Day 4
   // Q1
   print(
     "CampCleanup.countPairs pair.isFullyContained",
@@ -56,6 +56,16 @@ object Main extends App {
     CampCleanup.countPairs(CampCleanupInput.value, pair => pair.isOverlapping)
   )
 
-
+  // Day 5
+  // Q1
+  print(
+    "SupplyStacks.topItems:: SingleStackCrateMover",
+    SupplyStacks.topItems(SupplyStacksInput.value)(SingleStackCrateMover)
+  )
+  // Q2
+  print(
+    "SupplyStacks.topItems:: MultiStackCrateMover",
+    SupplyStacks.topItems(SupplyStacksInput.value)(MultiStackCrateMover)
+  )
   private def print[T](result:T*):Unit = result.foreach(println)
 }

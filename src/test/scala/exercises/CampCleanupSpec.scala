@@ -1,6 +1,5 @@
 package com.github.mideo
-
-import exercises.{CampCleanup, ElfPair, Section}
+package exercises
 
 class CampCleanupSpec extends TestSpec {
 

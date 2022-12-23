@@ -1,6 +1,5 @@
 package com.github.mideo
-
-import exercises.{ElfGroup, RuckSack, RucksackCompartment, RucksackReorganization}
+package exercises
 
 class RucksackReorganizationSpec extends TestSpec {
   "RuckSack" should {

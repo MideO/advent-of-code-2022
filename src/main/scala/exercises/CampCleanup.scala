@@ -1,7 +1,7 @@
 package com.github.mideo
 package exercises
 
-
+// https://adventofcode.com/2022/day/4
 case class Section(block:String){
   def sequence:Seq[Int] = {
     val range = block.split("-")

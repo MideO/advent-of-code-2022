@@ -1,6 +1,5 @@
 package com.github.mideo
-
-import com.github.mideo.exercises.{CalorieCounting, Elf}
+package exercises
 
 class CalorieCountingSpec extends TestSpec {
 

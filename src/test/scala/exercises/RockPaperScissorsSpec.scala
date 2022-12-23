@@ -1,7 +1,5 @@
 package com.github.mideo
-
-import com.github.mideo.exercises.{PlayWithGameOptionStrategy, PlayWithOutcomeStrategy, RockPaperScissors}
-import com.github.mideo.exercises.RockPaperScissors._
+package exercises
 
 class RockPaperScissorsSpec extends TestSpec {
   "RockPaperScissors Player" should {
