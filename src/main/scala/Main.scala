@@ -2,7 +2,7 @@ package com.github.mideo
 
 import inputs._
 
-import com.github.mideo.exercises.{CalorieCounting, CampCleanup, MultiStackCrateMover, PlayWithGameOptionStrategy, PlayWithOutcomeStrategy, RockPaperScissors, RucksackReorganization, SingleStackCrateMover, SupplyStacks}
+import com.github.mideo.exercises._
 
 object Main extends App {
   // Day 1
@@ -67,5 +67,20 @@ object Main extends App {
     "SupplyStacks.topItems:: MultiStackCrateMover",
     SupplyStacks.topItems(SupplyStacksInput.value)(MultiStackCrateMover)
   )
+
+  // Day 6
+
+  // Q1
+  print(
+    "TuningTrouble.messageBeginPosition:: StartOfPacketMarker",
+    TuningTrouble.startMarkerIndex(TuningTroubleInput.value, StartOfPacketMarker)
+  )
+
+  // Q2
+  print(
+    "TuningTrouble.messageBeginPosition:: StartOfMessageMarker",
+    TuningTrouble.startMarkerIndex(TuningTroubleInput.value, StartOfMessageMarker)
+  )
+
   private def print[T](result:T*):Unit = result.foreach(println)
 }

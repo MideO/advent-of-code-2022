@@ -49,3 +49,7 @@ Evaluate Result in [Main.scala](./src/main/scala/Main.scala)
   )
 
 ```
+Run Main
+```bash
+  sbt clean run
+```
