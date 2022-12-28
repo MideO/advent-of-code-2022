@@ -69,7 +69,6 @@ object Main extends App {
   )
 
   // Day 6
-
   // Q1
   print(
     "TuningTrouble.messageBeginPosition:: StartOfPacketMarker",
@@ -81,6 +80,22 @@ object Main extends App {
     "TuningTrouble.messageBeginPosition:: StartOfMessageMarker",
     TuningTrouble.startMarkerIndex(TuningTroubleInput.value, StartOfMessageMarker)
   )
+
+
+  // Day 7
+  // Q1
+  print(
+    "NoSpaceLeftOnDevice.sum :: `d => d.size < 100000` ",
+    NoSpaceLeftOnDevice.sum(NoSpaceLeftOnDeviceInput.value, d => d.size < 100000)
+  )
+
+  // Q2
+  print(
+    "NoSpaceLeftOnDevice.findSmallestDirectorySizeToDeleteToPerformUpdate",
+    NoSpaceLeftOnDevice.findSmallestDirectorySizeToDeleteToPerformUpdate(NoSpaceLeftOnDeviceInput.value, 30000000L,70000000L)
+  )
+
+
 
   private def print[T](result:T*):Unit = result.foreach(println)
 }
