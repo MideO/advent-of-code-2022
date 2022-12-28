@@ -3,7 +3,7 @@ See: https://adventofcode.com/2022
 
 ### Dependencies
 * SBT 1.8.0
-* Scala 2.12
+* Scala 2.13
 
 ### How to Run Tests
 ```bash

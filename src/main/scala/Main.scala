@@ -95,7 +95,17 @@ object Main extends App {
     NoSpaceLeftOnDevice.findSmallestDirectorySizeToDeleteToPerformUpdate(NoSpaceLeftOnDeviceInput.value, 30000000L,70000000L)
   )
 
-
+  // Day 8
+  // Q1
+  print(
+    "TreetopTreeHouse.visibleTreesFromBoarder",
+    TreetopTreeHouse.visibleTreesFromBoarder(TreetopTreeHouseInput.value).length
+  )
+  // Q2
+  print(
+    "TreetopTreeHouse.highestScenicScore",
+    TreetopTreeHouse.highestScenicScore(TreetopTreeHouseInput.value)
+  )
 
   private def print[T](result:T*):Unit = result.foreach(println)
 }
