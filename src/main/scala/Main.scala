@@ -107,5 +107,20 @@ object Main extends App {
     TreetopTreeHouse.highestScenicScore(TreetopTreeHouseInput.value)
   )
 
+  // Day 9
+  // Q1
+  print(
+    "RopeBridge.processMovement, Two Knots",
+    RopeBridge.processMovement(RopeBridgeInput.value, new Knot, new Knot).last.visited.size
+  )
+
+  // Q2
+  print(
+    "RopeBridge.processMovement, Ten Knots",
+    RopeBridge.processMovement(
+      RopeBridgeInput.value, (1 to 10).map(n => new Knot(n)):_*)(9).visited.size
+  )
+
+
   private def print[T](result:T*):Unit = result.foreach(println)
 }
