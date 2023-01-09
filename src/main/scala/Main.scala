@@ -1,8 +1,7 @@
 package com.github.mideo
 
+import exercises._
 import inputs._
-
-import com.github.mideo.exercises._
 
 object Main extends App {
   // Day 1
@@ -119,6 +118,18 @@ object Main extends App {
     "RopeBridge.processMovement, Ten Knots",
     RopeBridge.processMovement(
       RopeBridgeInput.value, (1 to 10).map(n => new Knot(n)):_*)(9).visited.size
+  )
+
+  // Day 10
+  // Q1
+  print(
+    "CathodeRayTube.signalStrength, Cycle Stage During",
+    CathodeRayTube.signalStrength(CathodeRayTubeInput.value, _.during, (20 to 220 by 40):_*)
+  )
+  // Q2
+  print(
+    "Screen::draw(CathodeRayTubeInput.value)",
+    new Screen().draw(CathodeRayTubeInput.value)
   )
 
 
