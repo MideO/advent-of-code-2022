@@ -17,5 +17,6 @@ lazy val root = (project in file("."))
       "-deprecation",
       "-encoding",
       "utf8"
-    )
+    ),
+    javaOptions in run ++= Seq("-Xms2G", "-Xmx4G")
   )

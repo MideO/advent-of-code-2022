@@ -132,6 +132,19 @@ object Main extends App {
     new Screen().draw(CathodeRayTubeInput.value)
   )
 
+  // Day 11
+  // Q1
+  print(
+    "MonkeyInTheMiddle.monkeyBusinessLevel after 20 rounds",
+    MonkeyInTheMiddle.monkeyBusinessLevel(MonkeyInTheMiddle.play(MonkeyInTheMiddleInput.value, 20))
+  )
+  // Q2
+  print(
+    "MonkeyInTheMiddle.monkeyBusinessLevel after 10000 rounds no stress reducer",
+    MonkeyInTheMiddle.monkeyBusinessLevel(MonkeyInTheMiddle.play(MonkeyInTheMiddleInput.value, 10000, 1))
+  )
+
+
 
   private def print[T](result:T*):Unit = result.foreach(println)
 }

@@ -56,7 +56,7 @@ object TreetopTreeHouse {
       range.foreach {
         case x if selector(tree, x, area).height >= tree.height =>
           counter.push(selector(tree, x, area))
-          break
+          break()
         case x => counter.push(selector(tree, x, area))
       }
     }

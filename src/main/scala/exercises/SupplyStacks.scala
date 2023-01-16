@@ -66,7 +66,7 @@ object Stacks {
         .map(it => (it._1.asDigit, StackItem(it._2)))).groupBy(_._1)
       .view
       .mapValues(v => {
-        SupplyStack(Stack(v.map(it => it._2): _*))
+        SupplyStack(Stack(v.toSeq.map(it => it._2): _*))
       })
       .toMap
   }
