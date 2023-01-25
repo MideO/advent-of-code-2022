@@ -144,6 +144,17 @@ object Main extends App {
     MonkeyInTheMiddle.monkeyBusinessLevel(MonkeyInTheMiddle.play(MonkeyInTheMiddleInput.value, 10000, 1))
   )
 
+  // Day 12
+  // Q1
+  print(
+    "HillClimbingAlgorithm.shortestRoute from S",
+    HillClimbingAlgorithm.shortestRoute(Graph(HillClimbingAlgorithmInput.value), 'S')
+  )
+  // Q2
+  print(
+    "HillClimbingAlgorithm.shortestRoute from a",
+    HillClimbingAlgorithm.shortestRoute(Graph(HillClimbingAlgorithmInput.value), 'a')
+  )
 
 
   private def print[T](result:T*):Unit = result.foreach(println)
