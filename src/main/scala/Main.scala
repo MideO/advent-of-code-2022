@@ -156,6 +156,21 @@ object Main extends App {
     HillClimbingAlgorithm.shortestRoute(Graph(HillClimbingAlgorithmInput.value), 'a')
   )
 
+  // Day 13
+  // Q1
+  print(
+    "DistressSignal.sumOfOrdered",
+    DistressSignal.ordered(DistressSignalInput.value).sum
+  )
+  // Q2
+  print(
+    "DistressSignal.productOfDividers",{
+      val markers = List(NestedPacket(NestedPacket(IntPacket(2))), NestedPacket(NestedPacket(IntPacket(6))))
+      DistressSignal.position(
+      DistressSignal.sorted(DistressSignalInput.value, markers), markers).product
+    }
+  )
+
 
   private def print[T](result:T*):Unit = result.foreach(println)
 }
