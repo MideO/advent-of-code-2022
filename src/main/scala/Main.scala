@@ -171,6 +171,18 @@ object Main extends App {
     }
   )
 
+  // Day 14
+  // Q1
+  print(
+    "RegolithReservoir.restingSandPile floorDistance 0",
+    RegolithReservoir.restingSandPile(RegolithReservoirInput.value, Point("500,0"))
+  )
+
+  // Q2
+  print(
+    "RegolithReservoir.restingSandPile floorDistance 2",
+    RegolithReservoir.restingSandPile(RegolithReservoirInput.value, Point("500,0"), 2)
+  )
 
   private def print[T](result:T*):Unit = result.foreach(println)
 }
