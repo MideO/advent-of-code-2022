@@ -36,9 +36,7 @@ object RucksackReorganization {
     .sum
 
   def sumPriorityByElfGroup(input: String ) = {
-    input
-    .split("\n")
-      .filter(_.nonEmpty)
+    iterator(input)
     .sliding(3, 3)
     .map(it => it.map(i => RuckSack(i)))
     .map(ruckSacks => ElfGroup(ruckSacks:_*).findCommon.map(itemPriority).getOrElse(0))

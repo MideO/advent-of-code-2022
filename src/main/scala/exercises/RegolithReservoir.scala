@@ -19,12 +19,10 @@ object Point {
 object RangeInclusive {
   def apply(from: Point, to: Point): Seq[Point] = {
     (from, to) match {
-      case (Point(a, y), Point(b, _)) if a != b => range(a, b) map (x => Point(x, y))
-      case (Point(x, a), Point(_, b)) if a != b => range(a, b) map (y => Point(x, y))
+      case (Point(a, y), Point(b, _)) if a != b => numberRange(a, b) map (x => Point(x, y))
+      case (Point(x, a), Point(_, b)) if a != b => numberRange(a, b) map (y => Point(x, y))
     }
   }
-
-  private def range(a: Int, b: Int) = a to b by (if (a > b) -1 else 1)
 }
 
 case class Rocks(rocks: Set[Point], floorDistance: Int = 0) {
@@ -43,9 +41,7 @@ object Rocks {
     }.toList
 
   def apply(input: String, floorDistance: Int): Rocks = {
-    val rocks = input
-      .linesIterator
-      .filter(_.nonEmpty)
+    val rocks = iterator(input)
       .flatMap(points)
       .toSet
 

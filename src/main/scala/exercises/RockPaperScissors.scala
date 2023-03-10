@@ -69,8 +69,7 @@ object PlayWithOutcomeStrategy extends RockPaperScissorsStrategy[Int] {
 object RockPaperScissors {
   private val InputMapping: Map[String, GameChoice] = Map("A" -> Rock, "B" -> Paper, "C" -> Scissors)
   def playWithStrategy[T](input: String, strategy: RockPaperScissorsStrategy[T]): Int = {
-    input.split("\n")
-      .filter(_.nonEmpty)
+    iterator(input)
       .map { it =>
         val split = it.split(" ")
         strategy.execute(InputMapping(split.head), split.last)

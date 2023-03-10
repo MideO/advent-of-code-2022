@@ -71,7 +71,7 @@ class FilesSystemDevice(input: String, totalDiskSpace: Long = 70000000L) {
 
 
   private val breadCrumb: Stack[SystemFileType] = Stack(Directory("/"))
-  input.split("\n").filter(_.nonEmpty).foreach {
+  iterator(input).foreach {
     case x if x.startsWith("$ cd") => ChangeDirectory(x.split(" ").last, rootDir, breadCrumb)
     case x if x.startsWith("$ ls") => breadCrumb.head
     case x => breadCrumb.head.asInstanceOf[Directory].child(SystemFileType(x))

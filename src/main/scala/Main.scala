@@ -3,17 +3,19 @@ package com.github.mideo
 import exercises._
 import inputs._
 
+import java.util.Date
+
 object Main extends App {
   // Day 1
   // Q1
-  print (
+  print(
     "CalorieCounting.getElfMostCalories:",
-    CalorieCounting.getElfMostCalories(CalorieCountingInput.value)
+    () => CalorieCounting.getElfMostCalories(CalorieCountingInput.value)
   )
   // Q2
   print(
     "CalorieCounting.getTopNElvesMostCalories",
-    CalorieCounting.getTopNElvesMostCalories(CalorieCountingInput.value, 3).map(_.totalCalories).sum
+    () => CalorieCounting.getTopNElvesMostCalories(CalorieCountingInput.value, 3).map(_.totalCalories).sum
   )
 
 
@@ -21,25 +23,25 @@ object Main extends App {
   // Q1
   print(
     "RockPaperScissors.playWithStrategy PlayWithGameOptionStrategy",
-    RockPaperScissors.playWithStrategy(RockPaperScissorInput.value, PlayWithGameOptionStrategy)
+    () => RockPaperScissors.playWithStrategy(RockPaperScissorInput.value, PlayWithGameOptionStrategy)
   )
 
   // Q2
   print(
     "RockPaperScissors.playWithStrategy PlayWithOutcomeStrategy",
-    RockPaperScissors.playWithStrategy(RockPaperScissorInput.value, PlayWithOutcomeStrategy)
+    () => RockPaperScissors.playWithStrategy(RockPaperScissorInput.value, PlayWithOutcomeStrategy)
   )
 
   // Day 3
   // Q1
   print(
     "RucksackReorganization.sumPriority",
-    RucksackReorganization.sumPriority(RucksackReorganizationInput.value)
+    () => RucksackReorganization.sumPriority(RucksackReorganizationInput.value)
   )
   // Q2
   print(
     "RucksackReorganization.sumPriorityByElfGroup",
-    RucksackReorganization.sumPriorityByElfGroup(RucksackReorganizationInput.value)
+    () => RucksackReorganization.sumPriorityByElfGroup(RucksackReorganizationInput.value)
   )
 
 
@@ -47,37 +49,37 @@ object Main extends App {
   // Q1
   print(
     "CampCleanup.countPairs pair.isFullyContained",
-    CampCleanup.countPairs(CampCleanupInput.value, pair => pair.isFullyContained)
+    () => CampCleanup.countPairs(CampCleanupInput.value, pair => pair.isFullyContained)
   )
   // Q2
   print(
     "CampCleanup.countPairs pair.isOverlapping",
-    CampCleanup.countPairs(CampCleanupInput.value, pair => pair.isOverlapping)
+    () => CampCleanup.countPairs(CampCleanupInput.value, pair => pair.isOverlapping)
   )
 
   // Day 5
   // Q1
   print(
     "SupplyStacks.topItems:: SingleStackCrateMover",
-    SupplyStacks.topItems(SupplyStacksInput.value)(SingleStackCrateMover)
+    () => SupplyStacks.topItems(SupplyStacksInput.value)(SingleStackCrateMover)
   )
   // Q2
   print(
     "SupplyStacks.topItems:: MultiStackCrateMover",
-    SupplyStacks.topItems(SupplyStacksInput.value)(MultiStackCrateMover)
+    () => SupplyStacks.topItems(SupplyStacksInput.value)(MultiStackCrateMover)
   )
 
   // Day 6
   // Q1
   print(
     "TuningTrouble.messageBeginPosition:: StartOfPacketMarker",
-    TuningTrouble.startMarkerIndex(TuningTroubleInput.value, StartOfPacketMarker)
+    () => TuningTrouble.startMarkerIndex(TuningTroubleInput.value, StartOfPacketMarker)
   )
 
   // Q2
   print(
     "TuningTrouble.messageBeginPosition:: StartOfMessageMarker",
-    TuningTrouble.startMarkerIndex(TuningTroubleInput.value, StartOfMessageMarker)
+    () => TuningTrouble.startMarkerIndex(TuningTroubleInput.value, StartOfMessageMarker)
   )
 
 
@@ -85,89 +87,90 @@ object Main extends App {
   // Q1
   print(
     "NoSpaceLeftOnDevice.sum :: `d => d.size < 100000` ",
-    NoSpaceLeftOnDevice.sum(NoSpaceLeftOnDeviceInput.value, d => d.size < 100000)
+    () => NoSpaceLeftOnDevice.sum(NoSpaceLeftOnDeviceInput.value, d => d.size < 100000)
   )
 
   // Q2
   print(
     "NoSpaceLeftOnDevice.findSmallestDirectorySizeToDeleteToPerformUpdate",
-    NoSpaceLeftOnDevice.findSmallestDirectorySizeToDeleteToPerformUpdate(NoSpaceLeftOnDeviceInput.value, 30000000L,70000000L)
+    () => NoSpaceLeftOnDevice.findSmallestDirectorySizeToDeleteToPerformUpdate(NoSpaceLeftOnDeviceInput.value, 30000000L, 70000000L)
   )
 
   // Day 8
   // Q1
   print(
     "TreetopTreeHouse.visibleTreesFromBoarder",
-    TreetopTreeHouse.visibleTreesFromBoarder(TreetopTreeHouseInput.value).length
+    () => TreetopTreeHouse.visibleTreesFromBoarder(TreetopTreeHouseInput.value).length
   )
   // Q2
   print(
     "TreetopTreeHouse.highestScenicScore",
-    TreetopTreeHouse.highestScenicScore(TreetopTreeHouseInput.value)
+    () => TreetopTreeHouse.highestScenicScore(TreetopTreeHouseInput.value)
   )
 
   // Day 9
   // Q1
   print(
     "RopeBridge.processMovement, Two Knots",
-    RopeBridge.processMovement(RopeBridgeInput.value, new Knot, new Knot).last.visited.size
+    () => RopeBridge.processMovement(RopeBridgeInput.value, new Knot, new Knot).last.visited.size
   )
 
   // Q2
   print(
     "RopeBridge.processMovement, Ten Knots",
-    RopeBridge.processMovement(
-      RopeBridgeInput.value, (1 to 10).map(n => new Knot(n)):_*)(9).visited.size
+    () => RopeBridge.processMovement(
+      RopeBridgeInput.value, (1 to 10).map(n => new Knot(n)): _*)(9).visited.size
   )
 
   // Day 10
   // Q1
   print(
     "CathodeRayTube.signalStrength, Cycle Stage During",
-    CathodeRayTube.signalStrength(CathodeRayTubeInput.value, _.during, (20 to 220 by 40):_*)
+    () => CathodeRayTube.signalStrength(CathodeRayTubeInput.value, _.during, (20 to 220 by 40): _*)
   )
   // Q2
   print(
     "Screen::draw(CathodeRayTubeInput.value)",
-    new Screen().draw(CathodeRayTubeInput.value)
+    () => new Screen().draw(CathodeRayTubeInput.value)
   )
 
   // Day 11
   // Q1
   print(
     "MonkeyInTheMiddle.monkeyBusinessLevel after 20 rounds",
-    MonkeyInTheMiddle.monkeyBusinessLevel(MonkeyInTheMiddle.play(MonkeyInTheMiddleInput.value, 20))
+    () => MonkeyInTheMiddle.monkeyBusinessLevel(MonkeyInTheMiddle.play(MonkeyInTheMiddleInput.value, 20))
   )
   // Q2
   print(
     "MonkeyInTheMiddle.monkeyBusinessLevel after 10000 rounds no stress reducer",
-    MonkeyInTheMiddle.monkeyBusinessLevel(MonkeyInTheMiddle.play(MonkeyInTheMiddleInput.value, 10000, 1))
+    () => MonkeyInTheMiddle.monkeyBusinessLevel(MonkeyInTheMiddle.play(MonkeyInTheMiddleInput.value, 10000, 1))
   )
 
   // Day 12
   // Q1
   print(
     "HillClimbingAlgorithm.shortestRoute from S",
-    HillClimbingAlgorithm.shortestRoute(Graph(HillClimbingAlgorithmInput.value), 'S')
+    () => HillClimbingAlgorithm.shortestRoute(Graph(HillClimbingAlgorithmInput.value), 'S')
   )
   // Q2
   print(
     "HillClimbingAlgorithm.shortestRoute from a",
-    HillClimbingAlgorithm.shortestRoute(Graph(HillClimbingAlgorithmInput.value), 'a')
+    () => HillClimbingAlgorithm.shortestRoute(Graph(HillClimbingAlgorithmInput.value), 'a')
   )
 
   // Day 13
   // Q1
   print(
     "DistressSignal.sumOfOrdered",
-    DistressSignal.ordered(DistressSignalInput.value).sum
+    () => DistressSignal.ordered(DistressSignalInput.value).sum
   )
   // Q2
   print(
-    "DistressSignal.productOfDividers",{
+    "DistressSignal.productOfDividers", {
       val markers = List(NestedPacket(NestedPacket(IntPacket(2))), NestedPacket(NestedPacket(IntPacket(6))))
-      DistressSignal.position(
-      DistressSignal.sorted(DistressSignalInput.value, markers), markers).product
+      () =>
+        DistressSignal.position(
+          DistressSignal.sorted(DistressSignalInput.value, markers), markers).product
     }
   )
 
@@ -175,14 +178,30 @@ object Main extends App {
   // Q1
   print(
     "RegolithReservoir.restingSandPile floorDistance 0",
-    RegolithReservoir.restingSandPile(RegolithReservoirInput.value, Point("500,0"))
+    () => RegolithReservoir.restingSandPile(RegolithReservoirInput.value, Point("500,0"))
   )
 
   // Q2
   print(
     "RegolithReservoir.restingSandPile floorDistance 2",
-    RegolithReservoir.restingSandPile(RegolithReservoirInput.value, Point("500,0"), 2)
+    () => RegolithReservoir.restingSandPile(RegolithReservoirInput.value, Point("500,0"), 2)
   )
 
-  private def print[T](result:T*):Unit = result.foreach(println)
+  // Day 15
+  // Q1
+  print(
+    "BeaconExclusionZone.positionThatCannotContainABeacon ",
+    () => BeaconExclusionZone.positionThatCannotContainABeacon(BeaconExclusionZoneInput.value, 2000000)
+  )
+  // Q2
+  print(
+    "BeaconExclusionZone.tuningFrequency",
+    () => BeaconExclusionZone.tuningFrequency(BeaconExclusionZoneInput.value, 0, 4000000)
+  )
+
+  private def print[T](text: String, result: () => T): Unit = {
+    val now = new Date().toInstant.toEpochMilli
+    println(s"$text ${result.apply()}")
+    println(s"Took ${(new Date().toInstant.toEpochMilli - now)} ms")
+  }
 }

@@ -11,9 +11,7 @@ case class MapOfTrees(area: Seq[Seq[Tree]])
 
 object Quadcopter {
   def scan(input: String): MapOfTrees = MapOfTrees(
-    input
-      .split("\n")
-      .filter(_.nonEmpty)
+    iterator(input)
       .zipWithIndex
       .map(
         line => line._1

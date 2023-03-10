@@ -21,8 +21,7 @@ case class ElfPair(first:Section, second:Section) {
 
 object CampCleanup {
   def countPairs(input: String, criteria: ElfPair => Boolean):Int = {
-    input.split("\n")
-      .filter(_.nonEmpty)
+    iterator(input)
       .map(it => {
         val pair = it.split(",")
         ElfPair(Section(pair.head), Section(pair.last))

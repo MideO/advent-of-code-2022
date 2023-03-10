@@ -13,7 +13,7 @@ object Direction extends Enumeration {
   val R, L, U, D = Value
 }
 
-case class Position(x: Int, y: Int)
+
 
 class Knot(number: Int = 1, private val StartingPosition:Position = Position(0, 0)) {
 
@@ -58,8 +58,7 @@ object Repeat {
 
 object RopeBridge {
   def processMovement(input: String, knots: Knot*): Seq[Knot] = {
-    input.split("\n")
-      .filter(_.nonEmpty)
+    iterator(input)
       .foreach {
         line =>
           val split = line.split(" ")
